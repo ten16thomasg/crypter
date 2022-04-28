@@ -1,6 +1,6 @@
-username: "svc-cpe-local"
-description: "CPE Management Account"
-environment: "https://crypt-staging.uberinternal.com/checkin/"
+username: "User"
+description: "Account"
+environment: "URL"
 minSpecialChar: 9
 minNum: 5
 minUpperCase: 5

@@ -1,0 +1,353 @@
+INFO 2022/04/27 18:01:58 Starting Crypter
+INFO 2022/04/27 18:01:58 Generate key for Linux & Macos
+INFO 2022/04/27 18:01:58 Generate key for Windows
+INFO 2022/04/27 18:01:58 Defining variables
+INFO 2022/04/27 18:01:58 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/27 18:01:58 Running Powershell and Collecting Serial Number
+INFO 2022/04/27 18:01:59 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/27 18:01:59 Creating User svc-cpe-local
+INFO 2022/04/27 18:01:59 Sending DESKTOP-DSI2QL7 svc-cpe-local HAN0CX22B402424
+ to Crypt
+INFO 2022/04/27 18:01:59 Crypter Run Completed
+INFO 2022/04/28 13:54:41 Starting Crypter
+INFO 2022/04/28 13:54:41 Loading Variables from config file
+INFO 2022/04/28 13:54:41 Generating Keys
+INFO 2022/04/28 13:54:41 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 13:54:41 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 13:54:42 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 13:54:42 Creating User 
+INFO 2022/04/28 13:54:42 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:21:27 Starting Crypter
+INFO 2022/04/28 14:21:27 Loading Variables from config file
+INFO 2022/04/28 14:21:27 Generating Keys
+INFO 2022/04/28 14:21:27 Loading Variables
+INFO 2022/04/28 14:21:27 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 14:21:27 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 14:21:27 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 14:21:27 Creating User 
+INFO 2022/04/28 14:21:27 Elevating   to Administrator
+INFO 2022/04/28 14:21:27 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:22:38 Starting Crypter
+INFO 2022/04/28 14:22:38 Loading Variables from config file
+INFO 2022/04/28 14:22:38 Generating Keys
+INFO 2022/04/28 14:22:38 Loading Variables
+INFO 2022/04/28 14:22:38 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 14:22:38 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 14:22:39 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 14:22:39 Creating User 
+INFO 2022/04/28 14:22:39 Elevating   to Administrator
+INFO 2022/04/28 14:22:39 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:26:01 Starting Crypter
+INFO 2022/04/28 14:26:01 Loading Variables from config file
+INFO 2022/04/28 14:26:01 Generating Keys
+INFO 2022/04/28 14:26:01 Loading Variables
+INFO 2022/04/28 14:26:01 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 14:26:01 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 14:26:02 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 14:26:02 Creating User 
+INFO 2022/04/28 14:26:02 Elevating   to Administrator
+INFO 2022/04/28 14:26:02 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:29:31 Starting Crypter
+INFO 2022/04/28 14:29:31 Loading Variables from config file
+INFO 2022/04/28 14:29:31 Generating Keys
+INFO 2022/04/28 14:29:31 Loading Variables
+INFO 2022/04/28 14:29:31 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 14:29:31 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 14:29:32 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 14:29:32 Creating User 
+INFO 2022/04/28 14:29:32 Elevating   to Administrator
+INFO 2022/04/28 14:29:32 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:32:33 Starting Crypter
+INFO 2022/04/28 14:32:33 Loading Variables from config file
+INFO 2022/04/28 14:32:33 Generating Keys
+INFO 2022/04/28 14:32:33 Loading Variables
+INFO 2022/04/28 14:32:33 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 14:32:33 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 14:32:34 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 14:32:34 Creating User 
+INFO 2022/04/28 14:32:34 Elevating   to Administrator
+INFO 2022/04/28 14:32:34 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:33:41 Starting Crypter
+INFO 2022/04/28 14:33:41 Loading Variables from config file
+INFO 2022/04/28 14:33:41 Generating Keys
+INFO 2022/04/28 14:33:41 Loading Variables
+INFO 2022/04/28 14:33:41 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 14:33:41 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 14:33:41 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 14:33:41 Creating User 
+INFO 2022/04/28 14:33:41 Elevating   to Administrator
+INFO 2022/04/28 14:33:41 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:36:21 Starting Crypter
+INFO 2022/04/28 14:36:21 Loading Variables from config file
+INFO 2022/04/28 14:36:21 Generating Keys
+INFO 2022/04/28 14:36:21 Loading Variables
+INFO 2022/04/28 14:36:21 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 14:36:21 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 14:36:22 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 14:36:22 Creating User 
+INFO 2022/04/28 14:36:22 Elevating   to Administrator
+INFO 2022/04/28 14:36:22 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:39:07 Starting Crypter
+INFO 2022/04/28 14:39:07 Loading Variables from config file
+INFO 2022/04/28 14:39:07 Generating Keys
+INFO 2022/04/28 14:39:07 Loading Variables
+INFO 2022/04/28 14:39:07 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 14:39:07 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 14:39:08 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 14:39:08 Creating User 
+INFO 2022/04/28 14:39:08 Elevating   to Administrator
+INFO 2022/04/28 14:39:08 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:40:01 Starting Crypter
+INFO 2022/04/28 14:40:01 Loading Variables from config file
+INFO 2022/04/28 14:40:01 Generating Keys
+INFO 2022/04/28 14:40:01 Loading Variables
+INFO 2022/04/28 14:40:01 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 14:40:01 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 14:40:02 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 14:40:02 Creating User 
+INFO 2022/04/28 14:40:02 Elevating   to Administrator
+INFO 2022/04/28 14:40:02 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:40:12 Starting Crypter
+INFO 2022/04/28 14:40:12 Loading Variables from config file
+INFO 2022/04/28 14:40:12 Generating Keys
+INFO 2022/04/28 14:40:12 Loading Variables
+INFO 2022/04/28 14:40:12 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 14:40:12 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 14:40:12 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 14:40:12 Creating User 
+INFO 2022/04/28 14:40:12 Elevating   to Administrator
+INFO 2022/04/28 14:40:12 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:41:07 Starting Crypter
+INFO 2022/04/28 14:41:07 Loading Variables from config file
+INFO 2022/04/28 14:41:07 Generating Keys
+INFO 2022/04/28 14:41:07 Loading Variables
+INFO 2022/04/28 14:41:07 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 14:41:07 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 14:41:08 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 14:41:08 Creating User 
+INFO 2022/04/28 14:41:08 Elevating   to Administrator
+INFO 2022/04/28 14:41:08 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:52:13 Starting Crypter
+INFO 2022/04/28 14:52:13 Loading Variables from config file
+INFO 2022/04/28 14:52:13 Generating Keys
+INFO 2022/04/28 14:52:13 Loading Variables
+INFO 2022/04/28 14:52:13 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 14:52:13 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 14:52:14 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 14:52:14 Creating User 
+INFO 2022/04/28 14:52:14 Elevating   to Administrator
+INFO 2022/04/28 14:52:14 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:53:05 Starting Crypter
+INFO 2022/04/28 14:53:05 Loading Variables from config file
+INFO 2022/04/28 14:53:05 Generating Keys
+INFO 2022/04/28 14:53:05 Loading Variables
+INFO 2022/04/28 14:53:05 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 14:53:05 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 14:53:06 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 14:53:06 Creating User 
+INFO 2022/04/28 14:53:06 Elevating   to Administrator
+INFO 2022/04/28 14:53:06 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:55:18 Starting Crypter
+INFO 2022/04/28 14:55:18 Loading Variables from config file
+INFO 2022/04/28 14:55:18 Generating Keys
+INFO 2022/04/28 14:55:18 Loading Variables
+INFO 2022/04/28 14:55:18 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 14:55:18 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 14:55:19 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 14:55:19 Creating User 
+INFO 2022/04/28 14:55:19 Elevating   to Administrator
+INFO 2022/04/28 14:55:19 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:57:02 Starting Crypter
+INFO 2022/04/28 14:57:02 Loading Variables from config file
+INFO 2022/04/28 14:57:02 Generating Keys
+INFO 2022/04/28 14:57:02 Loading Variables
+INFO 2022/04/28 14:57:02 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 14:57:02 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 14:57:03 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 14:57:03 Creating User 
+INFO 2022/04/28 14:57:03 Elevating   to Administrator
+INFO 2022/04/28 14:57:03 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:57:29 Starting Crypter
+INFO 2022/04/28 14:57:29 Loading Variables from config file
+INFO 2022/04/28 14:57:29 Generating Keys
+INFO 2022/04/28 14:57:29 Loading Variables
+INFO 2022/04/28 14:57:29 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 14:57:29 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 14:57:30 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 14:57:30 Creating User 
+INFO 2022/04/28 14:57:30 Elevating   to Administrator
+INFO 2022/04/28 14:57:30 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:58:07 Starting Crypter
+INFO 2022/04/28 14:58:07 Loading Variables from config file
+INFO 2022/04/28 14:58:07 Generating Keys
+INFO 2022/04/28 14:58:07 Loading Variables
+INFO 2022/04/28 14:58:07 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 14:58:07 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 14:58:08 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 14:58:08 Creating User 
+INFO 2022/04/28 14:58:08 Elevating   to Administrator
+INFO 2022/04/28 14:58:08 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 14:58:08 Crypter Run Completed
+INFO 2022/04/28 15:01:53 Starting Crypter
+INFO 2022/04/28 15:01:53 Loading Variables from config file
+INFO 2022/04/28 15:01:53 Generating Keys
+INFO 2022/04/28 15:01:53 Loading Variables
+INFO 2022/04/28 15:01:53 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 15:01:53 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 15:01:54 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 15:01:54 Creating User 
+INFO 2022/04/28 15:01:54 Elevating   to Administrator
+INFO 2022/04/28 15:01:54 Sending DESKTOP-DSI2QL7  HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 15:01:55 Crypter Run Completed
+INFO 2022/04/28 15:21:18 Starting Crypter
+INFO 2022/04/28 15:21:18 Loading Variables from config file
+INFO 2022/04/28 15:21:18 Generating Keys
+INFO 2022/04/28 15:21:18 Loading Variables
+INFO 2022/04/28 15:21:18 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 15:21:18 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 15:21:19 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 15:21:19 Creating User svc-cpe-local
+INFO 2022/04/28 15:21:19 Elevating  svc-cpe-local to Administrator
+INFO 2022/04/28 15:21:19 Sending DESKTOP-DSI2QL7 svc-cpe-local HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 15:21:19 Crypter Run Completed
+INFO 2022/04/28 15:22:54 Starting Crypter
+INFO 2022/04/28 15:22:54 Loading Variables from config file
+INFO 2022/04/28 15:22:54 Generating Keys
+INFO 2022/04/28 15:22:54 Loading Variables
+INFO 2022/04/28 15:22:54 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 15:22:54 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 15:22:55 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 15:22:55 Creating User svc-cpe-remote
+INFO 2022/04/28 15:22:55 Elevating  svc-cpe-remote to Administrator
+INFO 2022/04/28 15:22:55 Sending DESKTOP-DSI2QL7 svc-cpe-remote HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 15:22:56 Crypter Run Completed
+INFO 2022/04/28 15:25:31 Starting Crypter
+INFO 2022/04/28 15:25:31 Loading Variables from config file
+INFO 2022/04/28 15:25:31 Generating Keys
+INFO 2022/04/28 15:25:31 Loading Variables
+INFO 2022/04/28 15:25:31 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 15:25:31 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 15:25:32 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 15:25:32 Creating User svc-cpe-local
+INFO 2022/04/28 15:25:32 Elevating  svc-cpe-local to Administrator
+INFO 2022/04/28 15:25:32 Sending DESKTOP-DSI2QL7 svc-cpe-local HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 15:25:32 Crypter Run Completed
+INFO 2022/04/28 15:35:27 Starting Crypter
+INFO 2022/04/28 15:35:27 Loading Variables from config file
+INFO 2022/04/28 15:35:27 Generating Keys
+INFO 2022/04/28 15:35:27 Loading Variables
+INFO 2022/04/28 15:35:27 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 15:35:27 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 15:35:27 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 15:35:27 Creating User svc-cpe-local
+INFO 2022/04/28 15:35:27 Elevating  svc-cpe-local to Administrator
+INFO 2022/04/28 15:35:27 Sending DESKTOP-DSI2QL7 svc-cpe-local HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 15:35:28 Crypter Run Completed
+INFO 2022/04/28 16:32:53 Starting Crypter
+INFO 2022/04/28 16:32:53 Loading Variables from config file
+INFO 2022/04/28 16:47:32 Starting Crypter
+INFO 2022/04/28 16:47:32 Loading Variables from config file
+INFO 2022/04/28 16:48:45 Starting Crypter
+INFO 2022/04/28 16:48:45 Loading Variables from config file
+INFO 2022/04/28 16:54:04 Starting Crypter
+INFO 2022/04/28 16:54:04 Loading Variables from config file
+INFO 2022/04/28 16:54:04 Generating Keys
+INFO 2022/04/28 16:54:04 Loading Variables
+INFO 2022/04/28 16:54:04 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 16:54:04 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 16:54:05 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 16:54:05 Creating User svc-cpe-local
+INFO 2022/04/28 16:54:05 Elevating  svc-cpe-local to Administrator
+INFO 2022/04/28 16:54:05 Sending DESKTOP-DSI2QL7 svc-cpe-local HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 16:54:06 Crypter Run Completed
+INFO 2022/04/28 16:58:45 Starting Crypter
+INFO 2022/04/28 16:58:45 Config File Set to ./config
+INFO 2022/04/28 16:58:45 Loading Variables from config file
+INFO 2022/04/28 16:58:45 Generating Keys
+INFO 2022/04/28 16:58:45 Loading Variables
+INFO 2022/04/28 16:58:45 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 16:58:45 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 16:58:46 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 16:58:46 Creating User svc-cpe-local
+INFO 2022/04/28 16:58:46 Elevating  svc-cpe-local to Administrator
+INFO 2022/04/28 16:58:46 Sending DESKTOP-DSI2QL7 svc-cpe-local HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 16:58:46 Crypter Run Completed
+INFO 2022/04/28 17:34:50 Starting Crypter
+INFO 2022/04/28 17:34:50 Config File Set to ./config
+INFO 2022/04/28 17:34:50 Loading Variables from config file
+INFO 2022/04/28 17:34:50 Generating Keys
+INFO 2022/04/28 17:34:50 Loading Variables
+INFO 2022/04/28 17:34:50 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 17:34:50 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 17:34:50 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 17:34:50 Creating User svc-cpe-local
+INFO 2022/04/28 17:34:50 Elevating  svc-cpe-local to Administrator
+INFO 2022/04/28 17:34:50 Sending DESKTOP-DSI2QL7 svc-cpe-local HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 17:34:51 Crypter Run Completed
+INFO 2022/04/28 17:37:10 Starting Crypter
+INFO 2022/04/28 17:37:10 Config File Set to ./config
+INFO 2022/04/28 17:37:10 Loading Variables from config file
+INFO 2022/04/28 17:37:10 Generating Keys
+INFO 2022/04/28 17:37:10 Loading Variables
+INFO 2022/04/28 17:37:10 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/28 17:37:10 Running Powershell and Collecting Serial Number
+INFO 2022/04/28 17:37:10 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/28 17:37:10 Creating User svc-cpe-local
+INFO 2022/04/28 17:37:10 Elevating  svc-cpe-local to Administrator
+INFO 2022/04/28 17:37:10 Sending DESKTOP-DSI2QL7 svc-cpe-local HAN0CX22B402424
+ to Crypt
+INFO 2022/04/28 17:37:11 Crypter Run Completed

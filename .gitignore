@@ -8,5 +8,4 @@ c/**
 host.h
 __debug_bin
 **debug.test
-pkg/powershell/remote_test.go
 

@@ -2,7 +2,7 @@
 
 # Goal
 
-The goal of this project is to create a deploy a POC crypt environment to AWS EC2 with Docker. The app will run behind an HTTPS Nginx proxy that uses Let's Encrypt SSL certificates. We'll also use AWS RDS to serve our Postgres database. As an added bonus we also Setup Crypter, a containerized micro-service that can work in tandem with Crypt to provide an end to end, client -> server, secrets management solution. This is intended to aid in understanding the technologies used to run Crypt Service Deployment in a production environment securely. As well as showcase potential improvements and extend the capabilities of the Default CRUD Crypt Django Application written by Graham https://github.com/grahamgilbert/Crypt-Server. 
+The goal of this project is to showcase Crypter-API and Crypter-Clients, a containerized micro-service with portable binaries, that work in tandem with Crypt to provide an end to end, client -> server, secrets management solution. I am running the server components of Crypt and Crypter-API on AWS EC2 with Docker, behind an HTTPS Nginx proxy. I also use AWS RDS to serve the Postgres database. Then As an added bonus I extend the capabilities of the Default CRUD Crypt Django Application written by Graham https://github.com/grahamgilbert/Crypt-Server by providing a front-end API to manage what data is sent to crypt.
 
 ## Features
 **Crypter-API**

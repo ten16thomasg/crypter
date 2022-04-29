@@ -13,7 +13,7 @@ Deploy Crypt and Crypter-API with Docker on AWS and communicate with the two ser
 8. [Deploying Crypter Docker Container](#deploying-crypter-docker-container)
 9. [Troubleshooting](#fourth-examplehttpwwwfourthexamplecom)
 
-In this POC lab guide, we'll deploy crypt to AWS EC2 with Docker. The app will run behind an HTTPS Nginx proxy that uses Let's Encrypt SSL certificates. We'll also use AWS RDS to serve our Postgres database. As an added bonus we also Setup Crypter, a containerized micro-service that can work in tandem with Crypt to provide an end to end, **client -> server**, secrets management solution. This guide is intended to aid in understanding the technolgies used in the Uber Client Platform Engineering Teams Crypt Service Deployment. As well as showcase potential improvements to the existing Architecture. For a detailed overview of our current Production deplyment, please refer to the *[Crypt Service Architecture](addlink)* teamDot Article.
+In this POC lab guide, we'll deploy crypt to AWS EC2 with Docker. The app will run behind an HTTPS Nginx proxy that uses Let's Encrypt SSL certificates. We'll also use AWS RDS to serve our Postgres database. As an added bonus we also Setup Crypter, a containerized micro-service that can work in tandem with Crypt to provide an end to end, **client -> server**, secrets management solution. This guide is intended to aid in understanding the technologies used in the Uber Client Platform Engineering Teams Crypt Service Deployment. As well as showcase potential improvements to the existing Architecture. For a detailed overview of our current Production deplyment, please refer to the *[Crypt Service Architecture](addlink)* teamDot Article.
 
 <img src="crypt.png"
      alt="Markdown Monster icon"

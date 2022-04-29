@@ -5,8 +5,20 @@
 The goal of this project is to create a deploy a POC crypt environment to AWS EC2 with Docker. The app will run behind an HTTPS Nginx proxy that uses Let's Encrypt SSL certificates. We'll also use AWS RDS to serve our Postgres database. As an added bonus we also Setup Crypter, a containerized micro-service that can work in tandem with Crypt to provide an end to end, client -> server, secrets management solution. This is intended to aid in understanding the technologies used to run Crypt Service Deployment in a production environment securely. As well as showcase potential improvements and extend the capabilities of the Default CRUD Crypt Django Application written by Graham https://github.com/grahamgilbert/Crypt-Server. 
 
 Features:
+**Crypter-API**
+1. Get Events from Crypter-API
+2. Post Events to Crypter-API
+3. Delete Events from Crypter-API
 
-1. **TODO:**
+**Crypter-Client**
+1. LAPS 2 Crypt. Simply update config file with desired encryption strength. Deploy teh binary and let crypter do the rest. 
+- Creates a local admin account. 
+- Rotates the credentials 
+- Sends key to Crypt Server
+
+2. Crypter Locker. Binary designed to subscribe to the crypter-api and lock or unlock an endpoint based on status updates. 
+- 
+3. Delete 
 
 # Status
 
@@ -29,7 +41,7 @@ It works
      alt="Markdown Monster icon"
      style="float: left; margin-right: 20px;" />
 
-#### How to run
+## How to run Crypter-API
 
 Pull down the Crypter Docker Image
 ```shell script
@@ -61,12 +73,12 @@ Build the image using the command in our root directory i.e. ./crypter-api
 docker-compose up
 ```
 
-##### How to test
+### How to test
 ```shell script
 go test -v server.go main.go handlers_test.go  -covermode=count  -coverprofile=./bin/coverage.out
 ```
 
-##### Initial Structure
+### Initial Structure
 ```
     .
     ├── bin
@@ -441,8 +453,46 @@ func main() {
 }
 ###
 ```
+## How to run Crypter-Clients
+```bash
+$ go env
+...
+GOARCH="amd64"
+GOHOSTARCH="amd64"
+GOHOSTOS="linux"
+GOOS="linux"
+...
+```
+#### Compile for Windows
+Here’s the command you need to run to compile your Go project for a 64-bit Windows machine:
 
-## Dependencies
+In this scenario, GOOS is windows, and GOARCH is amd64 indicating a 64-bit architecture. If you need to support a 32-bit architecture, all you need to do is change GOARCH to 386.
+```bash
+$ GOOS=windows GOARCH=386 go build -o bin/app-386.exe app.go
+```
+#### Compile for macOS
+The GOARCH values for Windows are also valid for macOS, but in this case the required GOOS value is darwin:
+**64-bit**
+```bash
+$ GOOS=darwin GOARCH=amd64 go build -o bin/app-amd64-darwin app.go
+```
+**32-bit**
+```bash
+$ GOOS=darwin GOARCH=386 go build -o bin/app-386-darwin app.go
+```
+#### Compile for Linux
+To build your Go program for Linux, use linux as the value of GOOS and the appropriate GOARCH value for your target CPU architecture:
+**64-bit**
+```bash
+$ GOOS=linux GOARCH=amd64 go build -o bin/app-amd64-linux app.go
+```
+**32-bit**
+```
+$ GOOS=linux GOARCH=386 go build -o bin/app-386-linux app.go
+```
+
+
+# Dependencies
 
 github.com/iamacarpet/go-win64api
 github.com/spf13/viper
@@ -450,14 +500,6 @@ github.com/gorilla/mux
 github.com/ten16thomasg/crypter-api/handlers
 github.com/ten16thomasg/crypter-api/store
 
-### Build Binaries
-
-1. Simply fetch the dependencies, `go get -d .` and then make sure to build, `go build`
-1. Copy the precompiled psh_host.dll into your location so it can be found when running the app
-    1. cmd - `copy %GOPATH%\src\github.com\KnicKnic\go-powershell\bin\psh_host.dll .`
-    1. powershell - `copy "$($env:GOPATH)\src\github.com\KnicKnic\go-powershell\bin\psh_host.dll" .`
-1. I ended up checking in the psh_host.dll and host.h (to make things easy)
-    1. I could not find a better way to go about this and still have things be easy.
 
 
 # Docs

@@ -6,19 +6,18 @@ The goal of this project is to create a deploy a POC crypt environment to AWS EC
 
 ## Features
 **Crypter-API**
-1. Get Events from Crypter-API
-2. Post Events to Crypter-API
-3. Delete Events from Crypter-API
+  - Get Events from Crypter-API
+  - Post Events to Crypter-API
+  - Delete Events from Crypter-API
 
 **Crypter-Client**
-1. LAPS 2 Crypt. Simply update config file with desired encryption strength. Deploy teh binary and let crypter do the rest. 
-- Creates a local admin account. 
-- Rotates the credentials 
-- Sends key to Crypt Server
+- LAPS 2 Crypt. Simply update config file with desired encryption strength. Deploy teh binary and let crypter do the rest. 
+  - Creates a local admin account. 
+  - Rotates the credentials 
+  - Sends key to Crypt Server
 
-2. Crypter Locker. Binary designed to subscribe to the crypter-api and lock or unlock an endpoint based on status updates. 
-- 
-3. Delete 
+- Crypter Locker. Binary designed to subscribe to the crypter-api and lock or unlock an endpoint based on status updates. 
+  - 
 
 # Status
 

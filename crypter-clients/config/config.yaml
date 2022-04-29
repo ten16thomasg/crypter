@@ -1,7 +1,0 @@
-username: "User"
-description: "Account"
-environment: "URL"
-minSpecialChar: 9
-minNum: 5
-minUpperCase: 5
-passwordLength: 16

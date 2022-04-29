@@ -351,3 +351,40 @@ INFO 2022/04/28 17:37:10 Elevating  svc-cpe-local to Administrator
 INFO 2022/04/28 17:37:10 Sending DESKTOP-DSI2QL7 svc-cpe-local HAN0CX22B402424
  to Crypt
 INFO 2022/04/28 17:37:11 Crypter Run Completed
+INFO 2022/04/29 16:21:45 Starting Crypter
+INFO 2022/04/29 16:21:45 Config File Set to ./config
+INFO 2022/04/29 16:21:45 Loading Variables from config file
+INFO 2022/04/29 16:24:38 Starting Crypter
+INFO 2022/04/29 16:24:38 Config File Set to config
+INFO 2022/04/29 16:24:38 Loading Variables from config file
+INFO 2022/04/29 16:26:11 Starting Crypter
+INFO 2022/04/29 16:26:11 Config File Set to config
+INFO 2022/04/29 16:26:11 Loading Variables from config file
+INFO 2022/04/29 16:28:58 Starting Crypter
+INFO 2022/04/29 16:28:58 Config File Set to ./config
+INFO 2022/04/29 16:28:58 Loading Variables from config file
+INFO 2022/04/29 16:28:58 Generating Keys
+INFO 2022/04/29 16:28:58 Loading Variables
+INFO 2022/04/29 16:28:58 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/29 16:28:58 Running Powershell and Collecting Serial Number
+INFO 2022/04/29 16:29:00 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/29 16:29:00 Creating User tmper
+INFO 2022/04/29 16:29:00 Elevating  tmper to Administrator
+INFO 2022/04/29 16:29:00 Sending DESKTOP-DSI2QL7 tmper HAN0CX22B402424
+ to Crypt
+INFO 2022/04/29 16:29:00 Crypter Run Completed
+INFO 2022/04/29 16:50:34 Starting Crypter
+INFO 2022/04/29 16:50:34 Config File Set to ./config
+INFO 2022/04/29 16:50:34 Loading Variables from config file
+INFO 2022/04/29 16:50:34 Generating Keys
+INFO 2022/04/29 16:50:34 Loading Variables
+INFO 2022/04/29 16:50:34 HostName is DESKTOP-DSI2QL7
+INFO 2022/04/29 16:50:34 Running Powershell and Collecting Serial Number
+INFO 2022/04/29 16:50:35 Serial Number is HAN0CX22B402424
+
+INFO 2022/04/29 16:50:35 Creating User tmper
+INFO 2022/04/29 16:50:35 Elevating  tmper to Administrator
+INFO 2022/04/29 16:50:35 Sending DESKTOP-DSI2QL7 tmper HAN0CX22B402424
+ to Crypt
+INFO 2022/04/29 16:50:35 Crypter Run Completed

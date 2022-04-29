@@ -6,18 +6,22 @@ The goal of this project is to create a deploy a POC crypt environment to AWS EC
 
 ## Features
 **Crypter-API**
-  - Get Events from Crypter-API
-  - Post Events to Crypter-API
-  - Delete Events from Crypter-API
+  - Dockerized API Endpoint serving as a trigger for Crypter Clients. Host in cloud of choice and simply docker-compose up to build.
+    - Get Events from Crypter-API
+    - Post Events to Crypter-API
+    - Delete Events from Crypter-API
 
 **Crypter-Client**
-- LAPS 2 Crypt. Simply update config file with desired encryption strength. Deploy teh binary and let crypter do the rest. 
+- LAPS 2 Crypt. Simply update config file with desired encryption strength. Deploy the binary and let crypter do the rest. 
   - Creates a local admin account. 
   - Rotates the credentials 
   - Sends key to Crypt Server
 
-- Crypter Locker. Binary designed to subscribe to the crypter-api and lock or unlock an endpoint based on status updates. 
-  - 
+- Crypter Locker. Binary Subscribes to the crypter-api and locks or unlocks an endpoint based on status returned. 
+  - Rotate local group membership
+  - Rotate local admin account credentials
+  - Clear cached logons
+  - Restart Device 
 
 # Status
 
@@ -34,7 +38,7 @@ It works
 - [x] plumb through callback handler for each specific logging type (verbose, debug, warning, ...)
 - [x] support for default loggers, like glog or log (in separate package)
 
-# Usage
+# Example Usage
 
 <img src="crypter.png"
      alt="Markdown Monster icon"

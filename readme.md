@@ -494,6 +494,18 @@ $ GOOS=linux GOARCH=amd64 go build -o build/crypter-2.0.0-x64-linux
 ```
 $ GOOS=linux GOARCH=386 go build -o build/crypter-2.0.0-386-linux
 ```
+**Run crypter cli**
+
+<img src="crypter_deploy_help.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 20px;" />
+
+
+<img src="crypter_deploy.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 20px;" />
+
+
 
 
 # Dependencies

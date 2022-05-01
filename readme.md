@@ -31,12 +31,13 @@ It works
 
 **TODO:**
 
+- [x] support for default loggers, like glog or log (in separate package)
 - [x] add some code for easy back and forth json serialization of complex objects
 - [X] more examples / tests
-- [ ] example / helper classes around exception
+- [X] add MacOS and Linux Support
+- [X] example / helper classes around exception
 - [x] a doc overview
 - [x] plumb through callback handler for each specific logging type (verbose, debug, warning, ...)
-- [x] support for default loggers, like glog or log (in separate package)
 
 # Example Usage
 

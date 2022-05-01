@@ -12,10 +12,10 @@ import (
 	"strings"
 	"time"
 
-	color "github.com/TwiN/go-color"
 	wapi "github.com/iamacarpet/go-win64api"
 	"github.com/spf13/cobra"
 	viper "github.com/spf13/viper"
+	"github.com/ten16thomasg/crypter/client/cmd/util"
 )
 
 func init() {
@@ -127,7 +127,7 @@ func sendtocrypt(pass, username, hostname, serialnumber, environment string) {
 	fmt.Println(res["form"])
 }
 
-func logger(message string) {
+func logger(message, clr string) {
 	f, err := os.OpenFile("crypter-laps.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		log.Println(err)
@@ -135,6 +135,7 @@ func logger(message string) {
 	defer f.Close()
 	logger := log.New(f, "INFO ", log.LstdFlags)
 	logger.Println(message)
+	fmt.Println(string(clr), message)
 }
 
 var deployCmd = &cobra.Command{
@@ -159,66 +160,64 @@ var deployLAPSCmd = &cobra.Command{
 	Short: "Deploy LAPS artifacts",
 	Long:  `This command can be used to deploy LAPS artifacts`,
 	Run: func(cmd *cobra.Command, args []string) {
-		// Main Laps Methods
-		fmt.Println("Executing 'crypter deploy api' command")
-		logger("Starting Crypter")
+		// Format Logs
+		red := "\033[31m"
+		green := "\033[32m"
+		yellow := "\033[33m"
+		logger("Executing 'crypter deploy laps' command", yellow)
 
 		// Set config file
-		viper.SetConfigName("config")
-		viper.AddConfigPath("./config")
-		logger("Config File Set to ./config")
+		logger("Loading Configuration File", yellow)
+		config, err := util.LoadConfig(".")
+		if err != nil {
+			logger("cannot load config", red)
+			log.Fatal("cannot load config:", err)
+		}
 
-		// Find and read the config file
-		logger("Loading Variables from config file")
-		username := getConfigStr("username")
-		description := getConfigStr("description")
-		environment := getConfigStr("environment")
-		minSpecialChar := getConfigInt("minSpecialChar")
-		minNum := getConfigInt("minNum")
-		minUpperCase := getConfigInt("minUpperCase")
-		passwordLength := getConfigInt("passwordLength")
+		// Assigning Config Values
+		logger("Loading Variables from config file", yellow)
+		username := config.Account
+		description := config.Description
+		environment := config.Environment
+		minSpecialChar := config.MinSpecialChar
+		minNum := config.MinNum
+		minUpperCase := config.MinUppercase
+		passwordLength := config.PasswordLength
 
 		// Generate Keys
-		logger("Generating Keys")
+		logger("Generating Keys", yellow)
 		rand.Seed(time.Now().Unix())
 		password := generatePassword(passwordLength, minSpecialChar, minNum, minUpperCase)
 
 		// Identify Hostname
 		hostname, err := os.Hostname()
 		if err == nil {
-			println(color.Colorize(color.Yellow, "HostName is "+hostname))
-			logger("HostName is " + hostname)
+			logger("HostName is "+hostname, yellow)
 		}
 
 		// Identify Serial
 		command := exec.Command("powershell.exe", "(Get-WmiObject -class win32_bios).SerialNumber")
-		logger("Running Powershell and Collecting Serial Number")
-		println(color.Colorize(color.Yellow, "Running Powershell and Collecting Serial Number"))
+		logger("Running Powershell and Collecting Serial Number", yellow)
 		serialnumber, err := command.CombinedOutput()
 		if err != nil {
+			logger("cmd.Run() failed, DEBUG ME", "Red")
 			log.Fatalf("cmd.Run() failed with %s\n", err)
-			logger("cmd.Run() failed, DEBUG ME")
-			println(color.Colorize(color.Red, "cmd.Run() failed, DEBUG ME"))
 		}
-		logger("Serial Number is " + string(serialnumber))
-		println(color.Colorize(color.Yellow, "Serial Number is "+string(serialnumber)))
+		logger("Serial Number is "+string(serialnumber), yellow)
 
 		// Create User
 		wapi.UserAdd(username, description, password)
-		logger("Creating User " + username)
-		println(color.Colorize(color.Yellow, "Creating User "+username))
+		logger("Creating User "+username, yellow)
 
 		// Modify User Permissions
 		wapi.SetAdmin(username)
-		logger("Elevating  " + username + " to Administrator")
-		println(color.Colorize(color.Yellow, "Elevating  "+username+" to Administrator"))
+		logger("Elevating  "+username+" to Administrator", yellow)
 
 		// Send to crypt
-		logger("Sending " + hostname + " " + username + " " + string(serialnumber) + " to Crypt")
+		logger("Sending "+hostname+" "+username+" "+string(serialnumber)+" to Crypt", yellow)
 		sendtocrypt(password, username, hostname, string(serialnumber), environment)
-		println(color.Colorize(color.Green, "Crypter Run Completed"))
 
-		logger("Crypter Run Completed")
+		logger("Crypter Run Completed", green)
 	},
 }
 

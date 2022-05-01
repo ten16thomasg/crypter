@@ -472,39 +472,46 @@ Here’s the command you need to run to compile your Go project for a 64-bit Win
 
 In this scenario, GOOS is windows, and GOARCH is amd64 indicating a 64-bit architecture. If you need to support a 32-bit architecture, all you need to do is change GOARCH to 386.
 ```bash
-$ GOOS=windows GOARCH=386 go build -o bin/app-386.exe app.go
+$ GOOS=windows GOARCH=386 go build -o build/crypter-2.0.0-windows.exe
 ```
 #### Compile for macOS
 The GOARCH values for Windows are also valid for macOS, but in this case the required GOOS value is darwin:
 **64-bit**
 ```bash
-$ GOOS=darwin GOARCH=amd64 go build -o bin/app-amd64-darwin app.go
+$ GOOS=darwin GOARCH=amd64 go build -o build/crypter-2.0.0-x64-darwin
 ```
 **32-bit**
 ```bash
-$ GOOS=darwin GOARCH=386 go build -o bin/app-386-darwin app.go
+$ GOOS=darwin GOARCH=386 go build -o build/crypter-2.0.0-386-darwin
 ```
 #### Compile for Linux
 To build your Go program for Linux, use linux as the value of GOOS and the appropriate GOARCH value for your target CPU architecture:
 **64-bit**
 ```bash
-$ GOOS=linux GOARCH=amd64 go build -o bin/app-amd64-linux app.go
+$ GOOS=linux GOARCH=amd64 go build -o build/crypter-2.0.0-x64-linux
 ```
 **32-bit**
 ```
-$ GOOS=linux GOARCH=386 go build -o bin/app-386-linux app.go
+$ GOOS=linux GOARCH=386 go build -o build/crypter-2.0.0-386-linux
 ```
 
 
 # Dependencies
 
-github.com/iamacarpet/go-win64api
-github.com/spf13/viper
-github.com/gorilla/mux
-github.com/ten16thomasg/crypter-api/handlers
-github.com/ten16thomasg/crypter-api/store
+**Install Dependencies**
+```bash
+go get `
+  github.com/iamacarpet/go-win64api
+  github.com/spf13/viper
+  github.com/gorilla/mux
+  github.com/ten16thomasg/crypter-api/handlers
+  github.com/ten16thomasg/crypter-api/store
+```
 
-
+**Remove Unused Dependencies**
+```bash
+go mod tidy
+```
 
 # Docs
 

@@ -1,10 +1,16 @@
 package cmd
 
 import (
+	"encoding/json"
 	"fmt"
 
 	"github.com/spf13/cobra"
 )
+
+type User struct {
+	Name   string
+	Status string
+}
 
 func init() {
 	rootCmd.AddCommand(statusCmd)
@@ -36,7 +42,14 @@ var statusLAPSCmd = &cobra.Command{
 	Long:  `This command can be used to status of LAPS deployment`,
 	Run: func(cmd *cobra.Command, args []string) {
 		// *** add code to invoke automation end points below ***
-		fmt.Println("Executing 'crypter status laps' placeholder command")
+		// fmt.Println("Executing 'crypter status laps' placeholder command")
+		user := &User{Name: "Frank", Status: "True"}
+		b, err := json.Marshal(user)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		fmt.Println(string(b))
 	},
 }
 

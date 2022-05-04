@@ -32,6 +32,7 @@ It works
 **TODO:**
 
 - [x] support for default loggers, like glog or log (in separate package)
+- [x] add built-in cross platform cron scheduler
 - [x] add some code for easy back and forth json serialization of complex objects
 - [X] more examples / tests
 - [X] add MacOS and Linux Support

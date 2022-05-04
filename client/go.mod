@@ -11,5 +11,5 @@ require (
 	github.com/scjalliance/comshim v0.0.0-20190308082608-cf06d2532c4e
 	github.com/spf13/cobra v0.0.6
 	github.com/spf13/viper v1.11.0
-	golang.org/x/sys v0.0.0-20220412211240-33da011f77ad
+	golang.org/x/sys v0.0.0-20220502124256-b6088ccd6cba
 )

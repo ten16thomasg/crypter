@@ -14,7 +14,6 @@ import (
 
 	wapi "github.com/iamacarpet/go-win64api"
 	"github.com/spf13/cobra"
-	viper "github.com/spf13/viper"
 	"github.com/ten16thomasg/crypter/client/cmd/util"
 )
 
@@ -36,7 +35,7 @@ func generatePassword(passwordLength, minSpecialChar, minNum, minUpperCase int) 
 		allCharSet     = lowerCharSet + upperCharSet + specialCharSet + numberSet
 	)
 	var password strings.Builder
-
+	// Check-n every 60 seconds but rotate every 24 hrs
 	//Set special character
 	for i := 0; i < minSpecialChar; i++ {
 		random := rand.Intn(len(specialCharSet))
@@ -65,42 +64,6 @@ func generatePassword(passwordLength, minSpecialChar, minNum, minUpperCase int) 
 		inRune[i], inRune[j] = inRune[j], inRune[i]
 	})
 	return string(inRune)
-}
-
-func getConfigStr(key string) string {
-
-	// Find and read the config file
-	err := viper.ReadInConfig()
-
-	if err != nil {
-		log.Fatalf("Error while reading config file %s", err)
-	}
-	value, ok := viper.Get(key).(string)
-
-	// If the type is a string then ok will be true
-	if !ok {
-		log.Fatalf("Invalid type assertion")
-	}
-
-	return value
-}
-
-func getConfigInt(key string) int {
-
-	// Find and read the config file
-	err := viper.ReadInConfig()
-
-	if err != nil {
-		log.Fatalf("Error while reading config file %s", err)
-	}
-	value, ok := viper.Get(key).(int)
-
-	// If the type is a string then ok will be true
-	if !ok {
-		log.Fatalf("Invalid type assertion")
-	}
-
-	return value
 }
 
 func sendtocrypt(pass, username, hostname, serialnumber, environment string) {
@@ -138,6 +101,17 @@ func logger(message, clr string) {
 	fmt.Println(string(clr), message)
 }
 
+func winevent(evtxType, evtxLocation, evtxMessage, evtxId string) {
+	command := "EventCreate"
+	args := []string{"/T", "" + evtxType, "/ID", "" + evtxId, "/L", "" + evtxLocation,
+		"/SO", "Go-Crypter", "/D", "" + evtxMessage}
+	cmd := exec.Command(command, args...)
+	err := cmd.Run()
+	if err != nil {
+		fmt.Println(err)
+	}
+}
+
 var deployCmd = &cobra.Command{
 	Use:     "deploy",
 	Aliases: []string{"dep", "depl"},
@@ -164,7 +138,9 @@ var deployLAPSCmd = &cobra.Command{
 		red := "\033[31m"
 		green := "\033[32m"
 		yellow := "\033[33m"
+
 		logger("Executing 'crypter deploy laps' command", yellow)
+		winevent("INFORMATION", "APPLICATION", "Executing 'crypter deploy laps' command", "359")
 
 		// Set config file
 		logger("Loading Configuration File", yellow)

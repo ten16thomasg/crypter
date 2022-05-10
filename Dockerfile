@@ -17,14 +17,14 @@ WORKDIR /app
 # are not changed.
 
 # Copy go mod and sum files
-COPY go.mod ./
-COPY go.sum ./
+COPY api/go.mod ./
+COPY api/go.sum ./
 
 # Download all dependencies.
 RUN go mod download
 
 # Now, copy the source code
-COPY . .
+COPY ./api .
 
 # Note here: CGO_ENABLED is disabled for cross system compilation
 # It is also a common best practise.

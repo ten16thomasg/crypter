@@ -34,12 +34,11 @@ It works
 - [ ] support for default loggers, like glog or log (in separate package)
 - [ ] add built-in cron scheduler capability (Linux/Macos)
 - [ ] add last rotation time stamp to registry
-- [ ] add some code for easy back and forth json serialization of complex objects
 - [ ] more examples / tests
 - [ ] add MacOS and Linux Support
 - [ ] example / helper classes around exception
-- [ ] a doc overview
-- [ ] plumb through callback handler for each specific logging type (verbose, debug, warning, ...)
+- [X] a doc overview
+- [X] plumb through callback handler for each specific logging type (verbose, debug, warning, ...)
 
 # Example Usage
 

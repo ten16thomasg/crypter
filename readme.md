@@ -510,7 +510,30 @@ $ GOOS=linux GOARCH=386 go build -o build/crypter-2.0.0-386-linux
      alt="Markdown Monster icon"
      style="float: left; margin-right: 20px;" />
 
+#### Get Crypter LAPS Status via CLI
+Running crypter status returns Crypter last RotateTime and CrypterEnabled state in Json Format. 
+Crypter collects this data from the registry. 
 
+```powershell
+PS C:\temp\go_projects\crypter\client> .\build\crypter-3.0.0.exe status laps
+{
+ "RotateTime": "05-17-2022 17:14:30",
+ "CrypterEnabled": true
+}
+PS C:\temp\go_projects\crypter\client> .\build\crypter-3.0.0.exe status laps | ConvertTo-Json
+[
+    "{",
+    " \"RotateTime\": \"05-17-2022 17:14:30\",",
+    " \"CrypterEnabled\": true",
+    "}"
+]
+PS C:\temp\go_projects\crypter\client> .\build\crypter-3.0.0.exe status laps | ConvertFrom-Json
+
+RotateTime          CrypterEnabled
+----------          --------------
+05-17-2022 17:14:30           True
+
+```
 
 
 # Dependencies

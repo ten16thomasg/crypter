@@ -10,9 +10,7 @@ type Config struct {
 	Description    string `mapstructure:"DESCRIPTION"`
 	Account        string `mapstructure:"ACCOUNT"`
 	Environment    string `mapstructure:"ENVIRONMENT"`
-	LogRed         string `mapstructure:"LOGRED"`
-	LogGreen       string `mapstructure:"LOGGREEN"`
-	LogYellow      string `mapstructure:"LOGYELLOW"`
+	RegKeyPath     string `mapstructure:"REGKEYPATH"`
 	MinSpecialChar int    `mapstructure:"MINSPECIALCHAR"`
 	MinNum         int    `mapstructure:"MINNUM"`
 	MinUppercase   int    `mapstructure:"MINUPPERCASE"`

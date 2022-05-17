@@ -1,10 +1,43 @@
 package cmd
 
 import (
+	"encoding/json"
 	"fmt"
+	"log"
 
 	"github.com/spf13/cobra"
+	"github.com/ten16thomasg/crypter/client/cmd/util"
+	"golang.org/x/sys/windows/registry"
 )
+
+type State struct {
+	RotateTime     string
+	CrypterEnabled bool
+}
+
+func GetRegKeyStringValue(registryKey string) string {
+	var access uint32 = registry.QUERY_VALUE
+	regKey, err := registry.OpenKey(registry.LOCAL_MACHINE, registryKey, access)
+	if err != nil {
+		if err != registry.ErrNotExist {
+			panic(err)
+		}
+		fmt.Println(false)
+	}
+
+	id, _, err := regKey.GetStringValue("RotateTime")
+	if err != nil {
+		panic(err)
+		fmt.Println(false)
+	}
+	data := State{
+		RotateTime:     id,
+		CrypterEnabled: true,
+	}
+	file, _ := json.MarshalIndent(data, "", " ")
+	return string(file)
+
+}
 
 func init() {
 	rootCmd.AddCommand(statusCmd)
@@ -13,8 +46,6 @@ func init() {
 	statusCmd.AddCommand(statusLAPSCmd)
 	statusCmd.AddCommand(statusEncryptCmd)
 }
-
-var registryKey string = "Software\\Crypter"
 
 var statusCmd = &cobra.Command{
 	Use:   "status",
@@ -39,7 +70,19 @@ var statusLAPSCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		// *** add code to invoke automation end points below ***
 		// fmt.Println("Executing 'crypter status laps' placeholder command")
-		fmt.Print(GetRegKeyStringValue(registryKey))
+		// Set config file
+		config, err := util.LoadConfig(".")
+		if err != nil {
+			fmt.Println("cannot load config")
+			log.Fatal("cannot load config:", err)
+			winevent("ERROR", "APPLICATION", "cannot load config:", "359")
+		}
+		winevent("INFORMATION", "APPLICATION", "Loading Configs", "359")
+
+		// Assigning Config Values
+		RegKeyPath := config.RegKeyPath
+
+		fmt.Print(GetRegKeyStringValue(RegKeyPath))
 	},
 }
 

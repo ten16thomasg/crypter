@@ -15,6 +15,7 @@ import (
 	wapi "github.com/iamacarpet/go-win64api"
 	"github.com/spf13/cobra"
 	"github.com/ten16thomasg/crypter/client/cmd/util"
+	"golang.org/x/sys/windows/registry"
 )
 
 func init() {
@@ -35,7 +36,6 @@ func generatePassword(passwordLength, minSpecialChar, minNum, minUpperCase int) 
 		allCharSet     = lowerCharSet + upperCharSet + specialCharSet + numberSet
 	)
 	var password strings.Builder
-	// Check-n every 60 seconds but rotate every 24 hrs
 	//Set special character
 	for i := 0; i < minSpecialChar; i++ {
 		random := rand.Intn(len(specialCharSet))
@@ -112,6 +112,39 @@ func winevent(evtxType, evtxLocation, evtxMessage, evtxId string) {
 	}
 }
 
+func creatRegKey(key string) {
+	k, err := registry.OpenKey(registry.LOCAL_MACHINE, "Software", registry.QUERY_VALUE)
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer k.Close()
+
+	keyName := key
+
+	tK, exist, err := registry.CreateKey(k, keyName, registry.CREATE_SUB_KEY)
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer tK.Close()
+
+	if exist {
+		fmt.Println("key %q already exists", keyName)
+	}
+}
+
+func createRegKeyValue(path string) {
+	k, err := registry.OpenKey(registry.LOCAL_MACHINE, path, registry.QUERY_VALUE|registry.SET_VALUE)
+	if err != nil {
+		log.Fatal(err)
+	}
+	if err := k.SetStringValue("RotateTime", time.Now().Format("01-02-2006 15:04:05")); err != nil {
+		log.Fatal(err)
+	}
+	if err := k.Close(); err != nil {
+		log.Fatal(err)
+	}
+}
+
 var deployCmd = &cobra.Command{
 	Use:     "deploy",
 	Aliases: []string{"dep", "depl"},
@@ -134,24 +167,20 @@ var deployLAPSCmd = &cobra.Command{
 	Short: "Deploy LAPS artifacts",
 	Long:  `This command can be used to deploy LAPS artifacts`,
 	Run: func(cmd *cobra.Command, args []string) {
-		// Format Logs
-		red := "\033[31m"
-		green := "\033[32m"
-		yellow := "\033[33m"
 
-		logger("Executing 'crypter deploy laps' command", yellow)
+		fmt.Println("Executing 'crypter deploy laps' command")
 		winevent("INFORMATION", "APPLICATION", "Executing 'crypter deploy laps' command", "359")
 
 		// Set config file
-		logger("Loading Configuration File", yellow)
 		config, err := util.LoadConfig(".")
 		if err != nil {
-			logger("cannot load config", red)
+			fmt.Println("cannot load config")
 			log.Fatal("cannot load config:", err)
+			winevent("ERROR", "APPLICATION", "cannot load config:", "359")
 		}
+		winevent("INFORMATION", "APPLICATION", "Loading Configs", "359")
 
 		// Assigning Config Values
-		logger("Loading Variables from config file", yellow)
 		username := config.Account
 		description := config.Description
 		environment := config.Environment
@@ -159,8 +188,14 @@ var deployLAPSCmd = &cobra.Command{
 		minNum := config.MinNum
 		minUpperCase := config.MinUppercase
 		passwordLength := config.PasswordLength
+		red := "\033[31m"
+		green := "\033[32m"
+		yellow := "\033[33m"
+
+		logger("Loading Variables from config file", yellow)
 
 		// Generate Keys
+		winevent("INFORMATION", "APPLICATION", "Generating Keys", "359")
 		logger("Generating Keys", yellow)
 		rand.Seed(time.Now().Unix())
 		password := generatePassword(passwordLength, minSpecialChar, minNum, minUpperCase)
@@ -169,30 +204,47 @@ var deployLAPSCmd = &cobra.Command{
 		hostname, err := os.Hostname()
 		if err == nil {
 			logger("HostName is "+hostname, yellow)
+			winevent("INFORMATION", "APPLICATION", "Hostname Identified as "+hostname, "359")
 		}
 
 		// Identify Serial
-		command := exec.Command("powershell.exe", "(Get-WmiObject -class win32_bios).SerialNumber")
+		command := exec.Command("powershell.exe", "(Get-WmiObject -class win32_bios).SerialNumber") //Get From the Registry!!!
 		logger("Running Powershell and Collecting Serial Number", yellow)
 		serialnumber, err := command.CombinedOutput()
 		if err != nil {
-			logger("cmd.Run() failed, DEBUG ME", "Red")
+			logger("cmd.Run() failed, DEBUG ME", red)
 			log.Fatalf("cmd.Run() failed with %s\n", err)
 		}
+		winevent("INFORMATION", "APPLICATION", "Serial Number is "+string(serialnumber), "359")
 		logger("Serial Number is "+string(serialnumber), yellow)
+
+		// Remove User
+		wapi.UserDelete(username)
+		logger("Removing User if Exists "+username, yellow)
+		winevent("INFORMATION", "APPLICATION", "Removing User if Exists "+username, "359")
 
 		// Create User
 		wapi.UserAdd(username, description, password)
 		logger("Creating User "+username, yellow)
+		winevent("INFORMATION", "APPLICATION", "Creating User "+username, "359")
 
 		// Modify User Permissions
 		wapi.SetAdmin(username)
 		logger("Elevating  "+username+" to Administrator", yellow)
+		winevent("INFORMATION", "APPLICATION", "Elevating  "+username+" to Administrator", "359")
 
 		// Send to crypt
 		logger("Sending "+hostname+" "+username+" "+string(serialnumber)+" to Crypt", yellow)
 		sendtocrypt(password, username, hostname, string(serialnumber), environment)
+		winevent("INFORMATION", "APPLICATION", "Sending "+hostname+" "+username+" "+string(serialnumber)+" to Crypt", "359")
 
+		// Add Rotate time
+		creatRegKey("Crypter")
+		createRegKeyValue("Software\\Crypter")
+		winevent("INFORMATION", "APPLICATION", "Adding Crypter RotateTime to Registry", "359")
+
+		// Finish Crypt Run
+		winevent("INFORMATION", "APPLICATION", "Crypter Run Completed", "359")
 		logger("Crypter Run Completed", green)
 	},
 }

@@ -2,7 +2,7 @@
 
 # Goal
 
-The goal of this project is to showcase Crypter-API and Crypter-Clients, a containerized GO micro-service with portable GO binaries that work in tandem with Crypt to provide an end to end, client -> server, secrets management solution. I am running the server components of Crypt and Crypter-API on AWS EC2 with Docker, behind an HTTPS Nginx proxy. I also use AWS RDS to serve the Postgres database. Then As an added bonus I extend the capabilities of the Default CRUD Crypt Django Application written by Graham https://github.com/grahamgilbert/Crypt-Server by providing a front-end API to manage what data is sent to crypt.
+The goal of this project is to showcase Crypter-API and Crypter-Clients, a containerized GO micro-service with portable GO binaries that work in tandem with Crypt to provide an end to end, client -> server, secrets management solution. I am running the server components of Crypt and Crypter-API on AWS EC2 with Docker, behind an HTTPS Nginx proxy. I also use AWS RDS to serve the Postgres database. Then As an added bonus I extend the capabilities of the Default CRUD Crypt Django Application written by Graham https://github.com/grahamgilbert/Crypt-Server by providing a front-end API to manage what data is sent to crypt with the crypter-client.
 
 ## Features
 **Crypter-API**
@@ -31,16 +31,20 @@ It works
 
 **TODO:**
 
-- [x] support for default loggers, like glog or log (in separate package)
-- [x] add built-in cross platform cron scheduler
-- [x] add some code for easy back and forth json serialization of complex objects
-- [X] more examples / tests
-- [X] add MacOS and Linux Support
-- [X] example / helper classes around exception
-- [x] a doc overview
-- [x] plumb through callback handler for each specific logging type (verbose, debug, warning, ...)
+- [ ] support for default loggers, like glog or log (in separate package)
+- [ ] add built-in cron scheduler capability (Linux/Macos)
+- [ ] add last rotation time stamp to registry
+- [ ] more examples / tests
+- [ ] add MacOS and Linux Support
+- [ ] example / helper classes around exception
+- [X] a doc overview
+- [X] plumb through callback handler for each specific logging type (verbose, debug, warning, ...)
 
 # Example Usage
+
+
+https://user-images.githubusercontent.com/39165147/166816876-c43bf52a-9b70-4c52-ae51-8cff461c1c7c.mp4
+
 
 <img src="crypter.png"
      alt="Markdown Monster icon"

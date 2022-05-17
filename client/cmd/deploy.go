@@ -145,6 +145,24 @@ func createRegKeyValue(path string) {
 	}
 }
 
+func GetRegKeyStringValue(registryKey string) (string, bool) {
+	var access uint32 = registry.QUERY_VALUE
+	regKey, err := registry.OpenKey(registry.LOCAL_MACHINE, registryKey, access)
+	if err != nil {
+		if err != registry.ErrNotExist {
+			panic(err)
+		}
+		return "", false
+	}
+
+	id, _, err := regKey.GetStringValue("RotateTime")
+	if err != nil {
+		panic(err)
+		return "CrypterEnabled:", false
+	}
+	return "RotateTime:" + id + "\nCrypterEnabled:", true
+}
+
 var deployCmd = &cobra.Command{
 	Use:     "deploy",
 	Aliases: []string{"dep", "depl"},

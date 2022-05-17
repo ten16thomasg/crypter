@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"golang.org/x/sys/windows/registry"
 )
 
 func init() {
@@ -16,24 +15,6 @@ func init() {
 }
 
 var registryKey string = "Software\\Crypter"
-
-func GetStringValue(registryKey string) (string, bool) {
-	var access uint32 = registry.QUERY_VALUE
-	regKey, err := registry.OpenKey(registry.LOCAL_MACHINE, registryKey, access)
-	if err != nil {
-		if err != registry.ErrNotExist {
-			panic(err)
-		}
-		return "", false
-	}
-
-	id, _, err := regKey.GetStringValue("RotateTime")
-	if err != nil {
-		panic(err)
-		return "CrypterEnabled:", false
-	}
-	return "RotateTime:" + id + "\nCrypterEnabled:", true
-}
 
 var statusCmd = &cobra.Command{
 	Use:   "status",
@@ -58,7 +39,7 @@ var statusLAPSCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		// *** add code to invoke automation end points below ***
 		// fmt.Println("Executing 'crypter status laps' placeholder command")
-		fmt.Print(GetStringValue(registryKey))
+		fmt.Print(GetRegKeyStringValue(registryKey))
 	},
 }
 

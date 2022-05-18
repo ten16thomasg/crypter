@@ -457,3 +457,63 @@ INFO 2022/05/17 17:14:29 Elevating  svc-cpe-local to Administrator
 INFO 2022/05/17 17:14:29 Sending DESKTOP-DSI2QL7 svc-cpe-local HAN0CX22B402424
  to Crypt
 INFO 2022/05/17 17:14:30 Crypter Run Completed
+INFO 2022/05/17 17:41:31 Loading Variables from config file
+INFO 2022/05/17 17:41:31 Generating Keys
+INFO 2022/05/17 17:41:31 HostName is DESKTOP-DSI2QL7
+INFO 2022/05/17 17:41:31 Running Powershell and Collecting Serial Number
+INFO 2022/05/17 17:41:31 Serial Number is HAN0CX22B402424
+
+INFO 2022/05/17 17:41:32 Removing User if Exists svc-cpe-local
+INFO 2022/05/17 17:41:32 Creating User svc-cpe-local
+INFO 2022/05/17 17:41:32 Elevating  svc-cpe-local to Administrator
+INFO 2022/05/17 17:41:32 Sending DESKTOP-DSI2QL7 svc-cpe-local HAN0CX22B402424
+ to Crypt
+INFO 2022/05/17 17:41:32 Crypter Run Completed
+INFO 2022/05/18 10:22:01 Loading Variables from config file
+INFO 2022/05/18 10:22:01 Generating Keys
+INFO 2022/05/18 10:22:01 HostName is DESKTOP-DSI2QL7
+INFO 2022/05/18 10:22:01 Running Powershell and Collecting Serial Number
+INFO 2022/05/18 10:22:02 Serial Number is HAN0CX22B402424
+
+INFO 2022/05/18 10:22:02 Removing User if Exists svc-cpe-local
+INFO 2022/05/18 10:22:02 Creating User svc-cpe-local
+INFO 2022/05/18 10:22:02 Elevating  svc-cpe-local to Administrator
+INFO 2022/05/18 10:22:02 Sending DESKTOP-DSI2QL7 svc-cpe-local HAN0CX22B402424
+ to Crypt
+INFO 2022/05/18 10:22:03 Crypter Run Completed
+INFO 2022/05/18 10:22:43 Loading Variables from config file
+INFO 2022/05/18 10:22:43 Generating Keys
+INFO 2022/05/18 10:22:43 HostName is DESKTOP-DSI2QL7
+INFO 2022/05/18 10:22:43 Running Powershell and Collecting Serial Number
+INFO 2022/05/18 10:22:44 Serial Number is HAN0CX22B402424
+
+INFO 2022/05/18 10:22:44 Removing User if Exists svc-cpe-local
+INFO 2022/05/18 10:22:44 Creating User svc-cpe-local
+INFO 2022/05/18 10:22:44 Elevating  svc-cpe-local to Administrator
+INFO 2022/05/18 10:22:44 Sending DESKTOP-DSI2QL7 svc-cpe-local HAN0CX22B402424
+ to Crypt
+INFO 2022/05/18 10:22:44 Crypter Run Completed
+INFO 2022/05/18 10:27:15 Loading Variables from config file
+INFO 2022/05/18 10:27:15 Generating Keys
+INFO 2022/05/18 10:27:15 HostName is DESKTOP-DSI2QL7
+INFO 2022/05/18 10:27:15 Running Powershell and Collecting Serial Number
+INFO 2022/05/18 10:27:15 Serial Number is HAN0CX22B402424
+
+INFO 2022/05/18 10:27:15 Removing User if Exists svc-cpe-local
+INFO 2022/05/18 10:27:15 Creating User svc-cpe-local
+INFO 2022/05/18 10:27:15 Elevating  svc-cpe-local to Administrator
+INFO 2022/05/18 10:27:15 Sending DESKTOP-DSI2QL7 svc-cpe-local HAN0CX22B402424
+ to Crypt
+INFO 2022/05/18 10:27:16 Crypter Run Completed
+INFO 2022/05/18 10:29:55 Loading Variables from config file
+INFO 2022/05/18 10:29:55 Generating Keys
+INFO 2022/05/18 10:29:55 HostName is DESKTOP-DSI2QL7
+INFO 2022/05/18 10:29:55 Running Powershell and Collecting Serial Number
+INFO 2022/05/18 10:29:55 Serial Number is HAN0CX22B402424
+
+INFO 2022/05/18 10:29:55 Removing User if Exists svc-cpe-local
+INFO 2022/05/18 10:29:55 Creating User svc-cpe-local
+INFO 2022/05/18 10:29:55 Elevating  svc-cpe-local to Administrator
+INFO 2022/05/18 10:29:55 Sending DESKTOP-DSI2QL7 svc-cpe-local HAN0CX22B402424
+ to Crypt
+INFO 2022/05/18 10:29:56 Crypter Run Completed

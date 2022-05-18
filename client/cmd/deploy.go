@@ -10,7 +10,9 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+	"syscall"
 	"time"
+	"unsafe"
 
 	wapi "github.com/iamacarpet/go-win64api"
 	"github.com/spf13/cobra"
@@ -145,24 +147,16 @@ func createRegKeyValue(path string) {
 	}
 }
 
-// func GetRegKeyStringValue(registryKey string) (string, bool) {
-// 	var access uint32 = registry.QUERY_VALUE
-// 	regKey, err := registry.OpenKey(registry.LOCAL_MACHINE, registryKey, access)
-// 	if err != nil {
-// 		if err != registry.ErrNotExist {
-// 			panic(err)
-// 		}
-// 		return "", false
-// 	}
-
-// 	id, _, err := regKey.GetStringValue("RotateTime")
-// 	if err != nil {
-// 		panic(err)
-// 		return "CrypterEnabled:", false
-// 	}
-// 	return "RotateTime:" + id + "\nCrypterEnabled:", true
-
-// }
+func isDomainJoined() bool {
+	var domain *uint16
+	var status uint32
+	err := syscall.NetGetJoinInformation(nil, &domain, &status)
+	if err != nil {
+		return false
+	}
+	syscall.NetApiBufferFree((*byte)(unsafe.Pointer(domain)))
+	return status == syscall.NetSetupDomainName
+}
 
 var deployCmd = &cobra.Command{
 	Use:     "deploy",
@@ -207,6 +201,7 @@ var deployLAPSCmd = &cobra.Command{
 		minNum := config.MinNum
 		minUpperCase := config.MinUppercase
 		passwordLength := config.PasswordLength
+		RegKeyPath := config.RegKeyPath
 		red := "\033[31m"
 		green := "\033[32m"
 		yellow := "\033[33m"
@@ -259,12 +254,13 @@ var deployLAPSCmd = &cobra.Command{
 
 		// Add Rotate time
 		creatRegKey("Crypter")
-		createRegKeyValue("Software\\Crypter")
+		createRegKeyValue(RegKeyPath)
 		winevent("INFORMATION", "APPLICATION", "Adding Crypter RotateTime to Registry", "359")
 
 		// Finish Crypt Run
 		winevent("INFORMATION", "APPLICATION", "Crypter Run Completed", "359")
 		logger("Crypter Run Completed", green)
+
 	},
 }
 
@@ -275,5 +271,11 @@ var deployEncryptCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		// *** add code to encrypt ***
 		fmt.Println("Executing 'crypter deploy encrypt'  command")
+
+		if isDomainJoined() {
+			fmt.Print("Is Domain Joined")
+		} else {
+			fmt.Print("Is NOT Domain Joined")
+		}
 	},
 }

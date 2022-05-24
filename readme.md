@@ -578,7 +578,7 @@ go mod tidy
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+The following libraries were extremely helpful in building this tool. Thank you Mitchell Hashimoto, Rodrigo Moraes & Steve Francia!
 
 * [System Info and User Management Library](https://github.com/iamacarpet/go-win64api)
 * [Config Manaegment JSON, TOML, YAML, HCL, envfile](https://github.com/spf13/viper)

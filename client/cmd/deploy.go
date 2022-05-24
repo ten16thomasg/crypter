@@ -210,7 +210,7 @@ var deployLAPSCmd = &cobra.Command{
 
 		// Generate Keys
 		winevent("INFORMATION", "APPLICATION", "Generating Keys", "359")
-		logger("Generating Keys", yellow)
+		logger("Generating Key", yellow)
 		rand.Seed(time.Now().Unix())
 		password := generatePassword(passwordLength, minSpecialChar, minNum, minUpperCase)
 

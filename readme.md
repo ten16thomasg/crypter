@@ -2,6 +2,28 @@
 
 # Goal
 
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#goal">Goal</a>
+      <ul>
+        <li><a href="#features">Features</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#status">Getting Started</a>
+      <ul>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#example-usage">Example Usage</a></li>
+      </ul>
+    </li>
+    <li><a href="#dependencies">Dependencies</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
 The goal of this project is to showcase Crypter-API and Crypter-Clients, a containerized GO micro-service with portable GO binaries that work in tandem with Crypt to provide an end to end, client -> server, secrets management solution. I am running the server components of Crypt and Crypter-API on AWS EC2 with Docker, behind an HTTPS Nginx proxy. I also use AWS RDS to serve the Postgres database. Then As an added bonus I extend the capabilities of the Default CRUD Crypt Django Application written by Graham https://github.com/grahamgilbert/Crypt-Server by providing a front-end API to manage what data is sent to crypt with the crypter-client.
 
 ## Features
@@ -23,13 +45,13 @@ The goal of this project is to showcase Crypter-API and Crypter-Clients, a conta
   - Clear cached logons
   - Restart Device 
 
-# Status
+# Getting Started
 
 It works
 
 1. This project is not api stable, however I believe it will be simple if you do use the current api to migrate to any future changes.
 
-**TODO:**
+**Roadmap**
 
 - [ ] support for default loggers, like glog or log (in separate package)
 - [ ] add built-in cron scheduler capability (Linux/Macos)
@@ -553,6 +575,14 @@ go get `
 go mod tidy
 ```
 
-# Docs
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+
+* [System Info and User Management Library](https://github.com/iamacarpet/go-win64api)
+* [Config Manaegment JSON, TOML, YAML, HCL, envfile](https://github.com/spf13/viper)
+* [HTTP router and URL matcher](https://github.com/gorilla/mux)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 

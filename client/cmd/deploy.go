@@ -14,6 +14,7 @@ import (
 	"time"
 	"unsafe"
 
+	"github.com/StackExchange/wmi"
 	wapi "github.com/iamacarpet/go-win64api"
 	"github.com/spf13/cobra"
 	"github.com/ten16thomasg/crypter/client/cmd/util"
@@ -130,7 +131,7 @@ func creatRegKey(key string) {
 	defer tK.Close()
 
 	if exist {
-		fmt.Println("key %q already exists", keyName)
+		fmt.Println("Key Updated in", keyName)
 	}
 }
 
@@ -145,6 +146,21 @@ func createRegKeyValue(path string) {
 	if err := k.Close(); err != nil {
 		log.Fatal(err)
 	}
+}
+
+func getSerialNumber() string {
+	type Win32_Bios struct {
+		SerialNumber string
+	}
+	var srl string
+	var dst []Win32_Bios
+	err := wmi.Query("SELECT SerialNumber FROM Win32_Bios", &dst)
+	if err != nil {
+		log.Fatal(err)
+	}
+	srl = dst[0].SerialNumber
+	return srl
+
 }
 
 func isDomainJoined() bool {
@@ -222,9 +238,8 @@ var deployLAPSCmd = &cobra.Command{
 		}
 
 		// Identify Serial
-		command := exec.Command("powershell.exe", "(Get-WmiObject -class win32_bios).SerialNumber") //Get From the Registry!!!
-		logger("Running Powershell and Collecting Serial Number", yellow)
-		serialnumber, err := command.CombinedOutput()
+		logger("Querying WMI Collecting Serial Number", yellow)
+		serialnumber := getSerialNumber()
 		if err != nil {
 			logger("cmd.Run() failed, DEBUG ME", red)
 			log.Fatalf("cmd.Run() failed with %s\n", err)

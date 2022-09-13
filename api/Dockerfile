@@ -41,3 +41,6 @@ COPY --from=builder /app/bin/main .
 
 # Run executable
 CMD ["./main"]
+
+# Expose 80 for Azure App Service 
+EXPOSE 80
